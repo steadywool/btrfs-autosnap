@@ -51,6 +51,9 @@ class Write:
 
             with open(config_dir, "a") as f:
                 f.write("# vim: ft=config")
+
+            # Confirm the operation
+            print("New configuration file created!")
         except:
             exit(f"Can't write {config_dir}.")
 
