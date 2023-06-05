@@ -15,13 +15,13 @@ You can now copy the different files to their respective locations:
 ```
 
 ```
-# mkdir /etc/snapshot
-# mv snapshot.conf /etc/snapshot/snapshot.conf
-```
-
-```
 # mkdir /etc/pacman.d/hooks
 # mv snapshot.hook /etc/pacman.d/hooks/snapshot.hook
+```
+
+And finally, generate the default configuration file:
+```
+# snapshot --generate
 ```
 
 ## Usage
@@ -32,10 +32,9 @@ Snapshots are created automatically before each Archlinux update.
 You can configure some options and choose which subvolumes will be snapshot by editing `/etc/snapshot/snapshot.conf`:
 ```conf
 [subvolumes] # You can add subvolumes here
-root = '/'
+root = /
 
 [main] # Constants
-snapshot_dir = '/.snapshots'
+snapshot_dir = /.snapshots
 keep_snapshots = 5
-date_format = '%s'
 ```
