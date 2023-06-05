@@ -27,6 +27,12 @@ config_dir = '/etc/snapshot/snapshot.conf'
 class Write:
     # Generate configuration
     def generate_config(self):
+        # Ask if we really want to (re)-generate the config
+        ask_generation = input("Do you want to generate the default configuration ? It will overwrite the old one (y|n): ")
+        if ask_generation.lower() != "y":
+            exit("Cancellation of the generation !")
+
+        # Content of the config file
         config_parser.add_section('subvolumes')
         config_parser.set('subvolumes', 'root', '/')
         config_parser.set('subvolumes', 'home', '/home')
@@ -35,7 +41,6 @@ class Write:
         config_parser.set('main', 'snapshot_dir', '/.snapshots')
         config_parser.set('main', 'keep_snapshots', '3')
 
-        # Write default config to the file
         try:
             # Create the directory if not exist
             makedirs(path.dirname(config_dir), exist_ok=True)
