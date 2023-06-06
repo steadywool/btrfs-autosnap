@@ -64,20 +64,22 @@ if option.generate:
 
 # -----------------------------------------------------------------------------------------
 class Read:
-    try:
-        # Read the config file
-        config_parser.read(config_dir)
+    # Variables
+    def __init__(self):
+        try:
+            # Read the config file
+            config_parser.read(config_dir)
 
-        # Dictionary from each sections
-        subvolume_dictionary = dict(config_parser.items('subvolumes'))
-        main_dictionary = dict(config_parser.items('main'))
+            # Dictionary from each sections
+            self.subvolume_dictionary = dict(config_parser.items('subvolumes'))
+            main_dictionary = dict(config_parser.items('main'))
 
-        # Constants from the main section
-        snapshot_dir = str(main_dictionary['snapshot_dir'])
-        keep_snapshots = int(main_dictionary['keep_snapshots'])
-        current_date = datetime.now().strftime('%s')
-    except:
-        exit(f"Can't read {config_dir}, please (re)-generate it.")
+            # Constants from the main section
+            self.snapshot_dir = str(main_dictionary['snapshot_dir'])
+            self.keep_snapshots = int(main_dictionary['keep_snapshots'])
+            self.current_date = datetime.now().strftime('%s')
+        except:
+            exit(f"Can't read {config_dir}, please (re)-generate it.")
 
     # Create snapshots
     def create_snapshot(self):
