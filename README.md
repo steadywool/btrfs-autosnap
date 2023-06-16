@@ -1,8 +1,8 @@
-# BTRFS automatic snapshot 🧶
+# 🧶 BTRFS automatic snapshot
 
 Create snapshots automatically with a configuration file !
 
-## Installation
+## 🚀 Installation
 To install this script, first clone this repository:
 ```
 $ git clone https://github.com/kaniville/btrfs-autosnap
@@ -24,7 +24,7 @@ And finally, generate the default configuration file:
 # snapshot --generate
 ```
 
-## Usage
+## 💎 Usage
 You can display the help by entering the command `snapshot --help`.
 
 Snapshots are created automatically before each Archlinux update.
