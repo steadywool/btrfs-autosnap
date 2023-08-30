@@ -1,5 +1,8 @@
 # 🧶 BTRFS automatic snapshot
 
+### ⛔ This repository has been archived and is no longer actively maintained. ⛔
+### ⛔ I recommend [Snapper](https://github.com/openSUSE/snapper) for taking snapshots of your system. ⛔
+
 Create snapshots automatically with a configuration file !
 
 ## 🚀 Installation
